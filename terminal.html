@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';"/>
+    <link rel="stylesheet" href="./node_modules/xterm/css/xterm.css" />
+
+    <link rel="stylesheet" href="./main.css"/>
+</head>
+<body>
+<div id="commandTerminalContainer" class="mdl-card mdl-shadow--2dp">
+    <div id="commandTerminal" class="mdl-card__supporting-text">
+
+    </div>
+</div>
+<script src="client/terminal_renderer.js"></script>
+</body>
+</html>

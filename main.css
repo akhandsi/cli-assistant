@@ -1,0 +1,251 @@
+[data-theme^="light"],
+[data-theme] [data-theme^="light"] {
+    --main-color: #000;
+    --primary-text: #000;
+    --secondary-text: #928F94;
+    --syntax-text: #FF6F00;
+    --background-color: #F5F5F5;
+    --container-background-color: #EEEEEE;
+    --list-item-border-color: #4B4B4B;
+    --hover-primary-text: #000;
+    --hover-secondary-text: #928F94;
+    --hover-color: #CFD8DC;
+    --hover-background-color: #CFD8DC;
+    --hover-border-color: #9E9E9E;
+    --toast-primary-text: #F2E7FE;
+    --toast-background-color: #757575;
+    --contact-background-color: #64B5F6;
+    --error-color: #fff;
+    --error-background-color: #B00020;
+}
+
+[data-theme^="dark"],
+[data-theme] [data-theme^="dark"] {
+    --main-color: #fff;
+    --primary-text: #fff;
+    --secondary-text: #928F94;
+    --syntax-text: #FFC871;
+    --background-color: #1F1B24;
+    --container-background-color: #1A1A1A;
+    --list-item-border-color: #4B4B4B;
+    --hover-primary-text: #F2E7FE;
+    --hover-secondary-text: #928F94;
+    --hover-color: #EBEAED;
+    --hover-background-color: #251E2D;
+    --hover-border-color: #715496;
+    --toast-primary-text: #F2E7FE;
+    --toast-background-color: #BB86FC;
+    --contact-background-color: #7F39FB;
+    --error-color: #000;
+    --error-background-color: #E57373;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body, .mdl-layout {
+    color: var(--main-color);
+    font-family: sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+}
+
+label.input-file {
+    color: var(--main-color);
+    text-transform: none;
+}
+
+label.input-file input[type=file] {
+    display: none;
+}
+
+.mdl-layout-title {
+    color: var(--main-color);
+}
+
+.mdl-layout__drawer-button {
+    right: 0;
+    left: auto;
+    color: var(--main-color);
+}
+
+.mdl-layout__drawer {
+    color: var(--main-color);
+    background-color: var(--background-color);
+}
+
+.mdl-layout__drawer.is-visible {
+    width: 400px;
+}
+
+.mdl-textfield__input {
+    border-bottom: 1px solid var(--secondary-text);
+}
+
+.mdl-textfield__label {
+    color: var(--secondary-text);
+}
+
+.mdl-chip__contact {
+    color: var(--primary-text);
+    background-color: var(--contact-background-color);
+}
+
+.mdl-list__item {
+    border-bottom: solid thin var(--list-item-border-color);
+}
+
+.mdl-list__item--three-line {
+    height: 100px;
+}
+
+.mdl-list__item--three-line .mdl-list__item-primary-content {
+    height: 64px;
+}
+
+.mdl-list__item-text-body-usage {
+    padding-left: 52px;
+    font-style: italic;
+    color: var(--syntax-text);
+}
+
+.mdl-list__item-text-body-usage:before {
+    content: 'Usage:';
+    font-style: normal;
+    color: var(--secondary-text);
+    padding-right: 16px;
+}
+
+.mdl-list__item-tag {
+    height: 36px;
+    width: 36px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: var(--secondary-text);
+    font-size: 14px;
+    color: var(--main-color);
+    margin-right: 8px;
+    line-height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mdl-list__item-tag-CD {
+    background-color: #9575CD;
+}
+
+.mdl-list__item-tag-GIT {
+    background-color: #81C784;
+}
+
+.mdl-list__item-tag-XL {
+    background-color: #4DB6AC;
+}
+
+.mdl-list__item-tag-DIA {
+    background-color: #7986CB;
+}
+
+.mdl-list__item .mdl-list__item-primary-content {
+    color: var(--primary-text)
+}
+
+.mdl-list__item .mdl-list__item-text-body {
+    color: var(--secondary-text);
+}
+
+.mdl-list__item:hover {
+    border: solid 2px var(--hover-border-color);
+    background-color: var(--hover-background-color);
+    cursor: pointer;
+}
+
+.mdl-list__item:hover .mdl-list__item-text {
+    color: var(--hover-primary-text);
+}
+
+.mdl-list__item:hover .mdl-list__item-text-body {
+    color: var(--hover-secondary-text);
+}
+
+.mdl-snackbar {
+    width: 100%;
+    max-width: 100%;
+    color: var(--toast-primary-text);
+    background-color: var(--toast-background-color);
+}
+
+#appContainer {
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+#commandList {
+    padding-top: 0;
+}
+
+#commandListBody {
+    background-color: var(--container-background-color);
+}
+
+#settingContainer {
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+#settingsSave {
+    float: right;
+}
+
+#settingsAliasFilePath {
+    padding-top: 16px;
+    margin: 4px;
+}
+
+#settingsAliasFilePathContainer {
+    padding-bottom: 32px;
+}
+
+#commandTerminalContainer {
+    width: 100%;
+    background: var(--secondary-text);
+    min-height: 300px;
+    max-height: 400px;
+}
+
+#commandTerminal {
+    width: 98%;
+    height: 100%;
+    padding: 8px 16px 4px 8px;
+    background: var(--secondary-text);
+    min-height: 320px;
+}
+
+.statusError {
+    color: var(--error-color);
+    background-color: var(--error-background-color);
+    padding: 16px;
+}
+
+.statusErrorHeading {
+    color: var(--error-color);
+    font-size: 20px;
+}
+
+.statusErrorFilePathTitle {
+    font-size: 16px;
+}
+
+.statusErrorFilePath {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.statusErrorSampleResponse {
+    font-size: 16px;
+}

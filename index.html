@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';"/>
+    <link rel="stylesheet" href="./node_modules/material-design-lite/material.min.css"/>
+    <link rel="stylesheet" href="./node_modules/xterm/css/xterm.css" />
+    <script src="./node_modules/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="./main.css"/>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Settings</span>
+            <hr/>
+            <div id="settingContainer">
+                <form action="#" name="settingForm" id="settingFormId">
+
+                   <div id="settingsAliasFilePathContainer">
+                       <Label class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect input-file">
+                           Add Help File
+                           <input id="settingsAliasFilePathPicker"
+                                  type="file"
+                                  accept=".txt"
+                                  onchange="onFilePathValueChange()">
+                       </label>
+                       <span id="settingsAliasFilePath"></span>
+                   </div>
+
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="settingsResizable">
+                        <input type="checkbox" id="settingsResizable" class="mdl-switch__input">
+                        <span class="mdl-switch__label">Resizable</span>
+                    </label>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="settingsDarkMode">
+                        <input type="checkbox" id="settingsDarkMode" class="mdl-switch__input">
+                        <span class="mdl-switch__label">Dark Mode</span>
+                    </label>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <button id="settingsSave"
+                            onclick="onSettingsSave()"
+                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">save</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <main class="mdl-layout__content">
+            <div id="appContainer">
+                <h2>CLI Assistant</h2>
+                <hr/>
+                <div id="platformInfo"></div>
+                <hr/>
+                <div id="commandListContainer">
+                    <h5 id="commandListHeader"></h5>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="commandListSearch">
+                            <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" id="commandListSearch" oninput="onSearch()">
+                            <label class="mdl-textfield__label" for="commandListSearch"></label>
+                        </div>
+                    </div>
+                    <div id="commandListBody" class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop mdl-cell--12-col-phone">
+                            <ul id="commandList" class="mdl-list"></ul>
+                        </div>
+                    </div>
+                    <div id="commandStatusOrError"></div>
+                </div>
+                <div id="commandCopyToastContainer" class="mdl-js-snackbar mdl-snackbar">
+                    <div class="mdl-snackbar__text"></div>
+                    <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+            </div>
+        </main>
+    </div>
+<script src="client/renderer.js"></script>
+<script>
+    backgroundProcess ();
+</script>
+</body>
+</html>

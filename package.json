@@ -1,0 +1,29 @@
+{
+  "name": "cli-assistant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w node-pty"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.3",
+    "electron-is": "^3.0.0",
+    "electron-rebuild": "^1.10.1"
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0",
+    "electron-store": "^5.1.1",
+    "express": "^4.17.1",
+    "material-design-lite": "^1.3.0",
+    "node-pty": "^0.10.0-beta9",
+    "uuid": "^7.0.3",
+    "xterm": "^4.5.0",
+    "xterm-addon-attach": "^0.5.0",
+    "xterm-addon-fit": "^0.3.0",
+    "xterm-addon-ligatures": "^0.2.1"
+  }
+}
